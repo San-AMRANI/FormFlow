@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                    <a href="https://cv.amranihassan.site" target="_blank">
+                        <img src="{{ asset('images/FormFlowLogoIcon.png') }}" alt="FormFlow Logo" class="mx-auto w-14 h-14">
                     </a>
                 </div>
 
@@ -15,7 +15,20 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <!-- New Form link -->
+                    <x-nav-link :href="route('forms.create')" :active="request()->routeIs('forms.create')">
+                        {{ __('New Form') }}
+                    </x-nav-link>
+
+                    <!-- Form Answers link -->
+                    <x-nav-link :active="request()->routeIs('forms.answers')" :disabled="!isset($form)">
+                        {{ __('Form Answers') }}
+                    </x-nav-link>
+                    <!-- You can add more links here as needed -->
                 </div>
+
+
             </div>
 
             <!-- Settings Dropdown -->

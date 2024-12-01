@@ -1,3 +1,78 @@
+@import '/node_modules/font-awesome/css/font-awesome.css';
+/* Import the Figtree font from npm package */
+@import '/node_modules/@fontsource/figtree/400.css'; /* Regular weight */
+@import '/node_modules/@fontsource/figtree/500.css'; /* Medium weight */
+@import '/node_modules/@fontsource/figtree/600.css'; /* Semi-bold weight */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add smooth transitions for field appearance */
+.field-entry {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.field-entry.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add an animation for field removal */
+.field-entry.removing {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.field-entry-fix{
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+/* tooltips */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    background: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-wrap: nowrap;
+  }
+  
+  .tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .tooltip-wrapper:hover i {
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tooltip-wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #333;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  
+/* end tooltips */

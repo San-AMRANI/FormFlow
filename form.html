@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire-Themed Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fire-like gradient */
+        }
+        .fire-card {
+            background: #ffffff; /* White card background */
+            box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.4), 0px 0px 40px rgba(255, 140, 0, 0.3); /* Subtle glow */
+            border: 1px solid rgba(255, 140, 0, 0.2);
+        }
+        .glow-text {
+            color: #ff4500;
+            text-shadow: 0px 0px 5px #ff4500, 0px 0px 5px #ff6347;
+        }
+        .input-focus {
+            outline: none;
+            box-shadow: 0px 0px 5px #ff4500, 0px 0px 10px #ff6347;
+	    transition: all 0.3s ease-in-out; /* Smooth transition */
+        }
+        select {
+            background-color: white; /* White dropdown background */
+            color: #333; /* Black text for options */
+        }
+    button {
+        background: linear-gradient(to right, #ff4500, #ff6347); /* Initial gradient */
+        background-size: 200% 100%; /* Stretch gradient for animation */
+        background-position: left center; /* Start gradient position */
+        transition: background-position 3s ease !important; /* Smooth transition */
+        color: white;
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-position: right center; /* Reverse the gradient */
+    }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+    <div class="fire-card p-8 rounded-xl max-w-lg w-full">
+        <h1 class="text-4xl font-bold glow-text text-center mb-6">🔥 Club Fire 🔥</h1>
+
+        <form class="space-y-6">
+            <!-- Name Field -->
+            <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="name">Name</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    placeholder="Your Name" 
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 input-focus">
+            </div>
+
+            <!-- Email Field -->
+            <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Your Email" 
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 input-focus">
+            </div>
+
+            <!-- Dropdown -->
+            <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="options">Select Option</label>
+                <select 
+                    id="options" 
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 input-focus">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="message">Message</label>
+                <textarea 
+                    id="message" 
+                    rows="4" 
+                    placeholder="Write your message here..." 
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 input-focus"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+                type="submit" 
+                class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white text-lg font-semibold rounded-lg hover:from-red-600 hover:to-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-300 transition">
+                Submit
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

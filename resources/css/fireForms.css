@@ -1,0 +1,201 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fire-like gradient */
+}
+.fire-card {
+    background: #ffffff; /* White card background */
+    box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.4), 0px 0px 40px rgba(255, 140, 0, 0.3); /* Subtle glow */
+    border: 1px solid rgba(255, 140, 0, 0.2);
+}
+.glow-text {
+    color: #ff4500;
+    text-shadow: 0px 0px 5px #ff4500, 0px 0px 5px #ff6347;
+}
+.input-focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #ff4500, 0px 0px 10px #ff6347;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+select {
+    background-color: white; /* White dropdown background */
+    color: #333; /* Black text for options */
+}
+button {
+    background: linear-gradient(to right, #ff4500, #ff6347); /* Initial gradient */
+    background-size: 200% 100%; /* Stretch gradient for animation */
+    background-position: left center; /* Start gradient position */
+    transition: background-position 3s ease !important; /* Smooth transition */
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+button:hover {
+    background-position: right center; /* Reverse the gradient */
+}
+
+/* Title and description styling */
+/* Style for the form header (title) */
+.form-header {
+    margin-bottom: 1rem; /* Add spacing below the title */
+}
+
+.form-header h1 {
+    font-size: 2.5rem; /* Adjust font size */
+    font-weight: bold;
+    color: #ff4500; /* Fire-like color */
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.6); /* Glow effect */
+    /* text-wrap: nowrap; */
+}
+
+/* Style for the description (title + description) container */
+.form-description {
+    margin-bottom: 2rem; /* Add space below the description */
+    padding: 1rem; /* Add padding around the description */
+    background: rgba(255, 69, 0, 0.1); /* Soft background to highlight the section */
+    border-radius: 0.5rem; /* Rounded corners for the description box */
+    box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Style for the title inside the description section */
+.form-description h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Darker color for readability */
+    margin-bottom: 0.75rem; /* Space below the title */
+}
+
+/* Style for the description text */
+.form-description p {
+    font-size: 1.2rem;
+    color: #444; /* Slightly lighter color */
+    line-height: 1.5;
+}
+
+
+.form-field-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-field-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Required field styling */
+.required-field {
+    color: red;
+}
+
+/* spinner */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    /* perspective: 100px !important; */
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.cube {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 5s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid orange; /* Solid cube outline */
+    box-sizing: border-box;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Position each face of the cube */
+.front  { transform: rotateY(  0deg) translateZ(25px); }
+.back   { transform: rotateY(180deg) translateZ(25px); }
+.left   { transform: rotateY( -90deg) translateZ(25px); }
+.right  { transform: rotateY(  90deg) translateZ(25px); }
+.top    { transform: rotateX(  90deg) translateZ(25px); }
+.bottom { transform: rotateX( -90deg) translateZ(25px); }
+
+/* Add an image to the front face */
+.face {
+    background-image: url('/public/images/FormFlowLogoIcon.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-color: white; /* Makes the image clearly visible */
+}
+
+/* Rotate animation */
+@keyframes rotateCube {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+/* end spinner */
+
+/* Glowing shadow on hover */
+.hover\:shadow-glow:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 165, 0, 0.6), /* Orange glow */
+                0 0 20px 10px rgba(255, 69, 0, 0.5);  /* Red glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+.submit-form{
+    transition: 0.5s !important;
+}
+
+
+/* modale animation  */
+/* Animation for list items */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for modal */
+.fade-in-modal {
+    opacity: 0;
+    animation: fadeInModal 0.3s forwards;
+}
+
+.fade-out-modal {
+    opacity: 1;
+    animation: fadeOutModal 0.3s forwards;
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutModal {
+    to {
+        opacity: 0;
+    }
+}
+/* modale animation end */
